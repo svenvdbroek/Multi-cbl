@@ -1,9 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv(r"C:\Users\svenv\OneDrive\Documenten\Multi_dbl\data\2026-02\2026-02\2026-02-avon-and-somerset-street.csv")
+df = pd.read_parquet(r"C:\Users\svenv\OneDrive\Documenten\Multi_dbl\all_streets.parquet")
 
-#CRIME COUNT BAR CHART
+# CRIME COUNT BAR CHART
 
 crime_counts = df['Crime type'].value_counts()
 
@@ -16,7 +16,7 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 
-#CRIME PERCENTAGE BAR CHART
+# CRIME PERCENTAGE BAR CHART
 
 crime_pct = (df["Crime type"].value_counts(normalize=True) * 100)
 
@@ -30,7 +30,7 @@ plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
 plt.show()
 
-#CRIME PER LSOA COUNT
+# CRIME PER LSOA COUNT
 
 lsoa_counts = (
     df["LSOA code"]
@@ -43,7 +43,7 @@ lsoa_counts.columns = ["lsoa", "total_crimes"]
 
 print(lsoa_counts.head(20))
 
-#NULL VALUE COUNT
+# NULL VALUE COUNT
 
 total = len(df)
 nulls = df["Crime ID"].isna().sum()
