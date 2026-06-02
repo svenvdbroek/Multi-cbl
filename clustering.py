@@ -224,3 +224,6 @@ ax.axis("off")
 plt.tight_layout()
 plt.savefig("cluster_map.png", dpi=150, bbox_inches="tight")
 plt.show()
+
+# SAVE CLUSTERS
+feature_df_clean[["cluster"]].to_csv(r"C:\Users\svenv\OneDrive\Documenten\Multi_dbl\cluster_assignments.csv")
