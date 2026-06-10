@@ -104,8 +104,8 @@ def fit_and_forecast(series: pd.Series, crime: str) -> None:
         trace=True,
     )
 
-    print(f"\n  ✓ Best order    : {auto_model.order}")
-    print(f"  ✓ Best seasonal : {auto_model.seasonal_order}")
+    print(f"\n  Best order    : {auto_model.order}")
+    print(f"  Best seasonal : {auto_model.seasonal_order}")
     print(auto_model.summary())
 
     result = auto_model.arima_res_
